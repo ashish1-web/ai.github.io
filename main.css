@@ -1,0 +1,54 @@
+*{
+    padding:0px;
+    margin: 0px;
+}
+
+
+
+.container{
+    height: 40rem;
+    width: 50rem;
+    background-color: red;
+    position: absolute;
+    top:10%;
+    left: 23%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+.container1{
+    width: 20%;
+    height: 30%;
+    background-color:white;
+  
+    
+}
+
+.container2{
+    width: 20%;
+    height: 30%;
+    background-color:white;
+   
+}
+
+.container1-inside{
+    height: 4rem;
+    width: 5rem;
+    background-color: yellow;
+    margin :0 auto;
+    
+}
+
+.container2-inside{
+
+    height: 4rem;
+    width: 5rem;
+    background-color: yellow;
+    margin :0 auto;
+    
+
+}
+
+
