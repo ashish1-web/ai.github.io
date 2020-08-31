@@ -1,4 +1,4 @@
-
+       
  function environment(){
     a=document.getElementById('box1');                        // 0 reprensts A  
     b=document.getElementById('box2'); 
@@ -29,31 +29,32 @@
         
  }
 
-
+var pointsA = 0;
+var pointsB = 0;
 
 function vaccumAgent()
 {
-    points = 0;
+    
     
     vaccumlocation = Math.round(Math.random(0,1)) ;           //Generates a random number between 0 and 1 represents location of vacum cleaner
     A=document.getElementById('box11');                        // 0 reprensts A  
-    B=document.getElementById('box22');                        // 1 represents B
+    B=document.getElementById('box12');                        // 1 represents B
+    a=document.getElementById('box1').style.background;                        // 0 reprensts A  
+    b=document.getElementById('box2').style.background; 
+    
    
-   
-    if(vaccumlocation=0){
+    if(vaccumlocation == 0){
        A.style.background="yellow";
+       B.style.background="transparent";
    }
    else{
-        A.style.background="transparent"
+        
+        B.style.background="yellow";
+        A.style.background="transparent";
    }
 
 
-   if(vaccumlocation=1){
-    B.style.background="yellow";
-    }
-    else{
-    B.style.background="transparent"
-    }
+
 
 
 
@@ -62,32 +63,36 @@ function vaccumAgent()
     if (vaccumlocation == 0)
     {
         console.log('Vaccum is randomly placed at A');
-        if(a==1){
+        if(a == 'black'){
             console.log('A is dirty');
-            points++;
-            a=0;
+            pointsA++;
+            document.getElementById('box1').style.background="white";
+            B.style.background="yellow";
+            A.style.background="transparent";
             console.log('Location A has been cleaned');
 
-            if(b==1)
+            if(b=="black")
             {
                 console.log('Location B is dirty');
                 console.log("moving to location b");
-                points--;
-                b=0;
+                pointsB--;
+                document.getElementById('box2').style.background="white";
                 console.log("location b has been cleaned");
             }
 
         }
 
         else{
-            if(b==1)
+            if(b == "black")
             {
+                B.style.background="yellow";
+                A.style.background="transparent";
                 console.log("Location b is dirty");
-                points--;
+                pointsB--;
                 console.log('moving to location b...');
-                b=0;
+                document.getElementById('box2').style.background="white";
                 console.log('location b has been cleaned');
-                points++;
+                
             }
         }
         
@@ -95,41 +100,46 @@ function vaccumAgent()
 
     else{
 
-        if(vaccumlocation ==1){
+        if(vaccumlocation ==1){                                                     //working fine  
 
             console.log('Vaccum is randomly placed at B');
-            if(b==1){
+            if(b== "black"){
             console.log('B is dirty');
-            points++;
-            b=0;
-            console.log('Location A has been cleaned');
+            pointsB++;
+            document.getElementById('box2').style.background = "white";
+            
+            console.log('Location B has been cleaned');
 
-            if(a==1)
+            if(a=="black")
             {
+                A.style.background="yellow";
+                B.style.background="transparent";
                 console.log('Location A is dirty');
                 console.log("moving to location a");
-                points--;
-                a=0;
+                pointsA--;
+                document.getElementById('box1').style.background="white";
                 console.log("location a has been cleaned");
             }
 
         }
 
         else{
-            if(a==1)
+            if(a=="black")
             {
+                A.style.background="yellow";
+                B.style.background="transparent";
                 console.log("Location a is dirty");
-                points--;
+                pointsA--;
                 console.log('moving to location a...');
-                a=0;
+                document.getElementById('box1').style.background="white";
                 console.log('location a has been cleaned');
-                points++;
+               
             }
         }
         }
     }
 
-}
+    document.getElementById("scoreA").innerHTML = pointsA;
+    document.getElementById("scoreB").innerHTML = pointsB;
 
-score = document.getElementById('score');
-score.innerHtml="points"; 
+}

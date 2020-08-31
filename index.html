@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <script src="app.js"></script>
+    
     <title>Document</title>
 </head>
 <body>
-    <button onclick="environment();vaccumAgent();">CLICK HERE TO CHANGE THE ENVIRONMENT</button>
-    <h1 id="score"></h1>
+    <button onclick="environment();vaccumAgent();" class="button">CLICK HERE TO INITIATE THE ROUNDS</button>
+    <h1>Scores of the two players</h1>
+    Score A: <span id="scoreA"></span><br>
+    Score B: <span id="scoreB"></span>
     <div class="container">
+        
 
         <div class="container1"   id=box1>
-            ROOM 1
+            ROOM A
             <div class="container1-inside"  id=box11> </div>
         </div>
 
         <div class="container2"   id=box2>
-            ROOM2
+            ROOM B
             <div class="container2-inside"  id=box12></div>
         </div>
+
     </div>
     
+    <script src="app.js"></script>
+  
 </body>
 </html>
